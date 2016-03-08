@@ -43,6 +43,28 @@ class Helpers
         $web->kill();
     }
 
+    public static function cleanup()
+    {
+        $web_name = basename(self::getProjectDir());
+        $web_name .= '_web';
+        $web = new Web($web_name);
+        $web->stop();
+        $web->kill();
+
+        $image_id = null;
+        $command = "docker images";
+        $output = Helpers::doLocal($command);
+        $container = env('container');
+        $pattern = '#'.$container.'\s.*latest\s+(.*?)\s#i';
+        if (preg_match($pattern, $output, $matches)) {
+            $image_id = $matches[1];
+        }
+
+        if($image_id) {
+            Helpers::doLocal('docker rmi -f '.$image_id);
+        }
+    }
+
     public static function waitForPort($waiting_message, $ip, $port)
     {
         write($waiting_message);

@@ -30,3 +30,7 @@ task('docker:halt', function () {
 task('docker:kill', function () {
     Helpers::kill();
 });
+
+task('docker:cleanup', function () {
+    Helpers::cleanup();
+});

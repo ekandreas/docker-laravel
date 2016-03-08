@@ -80,7 +80,15 @@ Stop the containers (php+mysql)
 dep docker:stop development
 ```
 
-## Parameters
+## Cleanup
+**Note!** Your web containers will be removed.
+If you get the wrong laravel image then do:
+```
+dep docker:cleanup development
+```
+And the container will be killed and the image removed to provide a new next startup.
+Good when need to create new image for Laravel containers.
+
 
 ...
 
