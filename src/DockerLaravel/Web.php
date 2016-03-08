@@ -76,9 +76,11 @@ class Web extends Container implements ContainerInterface
 
     public function stop()
     {
-        writeln('<comment>Stop running web</comment>');
-        $command = "docker stop $this->container";
-        Helpers::doLocal($command);
+        if ($this->exists()) {
+            writeln('<comment>Stop running web</comment>');
+            $command = "docker stop $this->container";
+            Helpers::doLocal($command);
+        }
     }
 
     public function kill()

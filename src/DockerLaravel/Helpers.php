@@ -48,18 +48,8 @@ class Helpers
         $web_name = basename(self::getProjectDir());
         $web_name .= '_web';
         $web = new Web($web_name);
-
-        try {
-            $web->stop();
-        } catch(Exception $ex) {
-            // dont care about error in this case...
-        }
-
-        try {
-            $web->kill();
-        } catch(Exception $ex) {
-            // dont care about error in this case...
-        }
+        $web->stop();
+        $web->kill();
 
         $image_id = null;
         $command = "docker images";
