@@ -1,6 +1,6 @@
 <?php
 
-namespace EkAndreas\DockerBedrock;
+namespace EkAndreas\DockerLaravel;
 
 class Helpers
 {
@@ -12,10 +12,6 @@ class Helpers
         $mysql_name = env('container').'_mysql';
         $mysql = new Mysql($mysql_name);
         $mysql->ensure();
-
-        $elastic_name = env('container').'_elastic';
-        $elastic = new Elasticsearch($elastic_name);
-        $elastic->ensure();
 
         $web_name = basename(self::getProjectDir());
         $web_name .= '_web';
@@ -29,10 +25,6 @@ class Helpers
         $mysql = new Mysql($mysql_name);
         $mysql->stop();
 
-        $elastic_name = env('container').'_elastic';
-        $elastic = new Elasticsearch($elastic_name);
-        $elastic->stop();
-
         $web_name = basename(self::getProjectDir());
         $web_name .= '_web';
         $web = new Web($web_name);
@@ -44,10 +36,6 @@ class Helpers
         $mysql_name = env('container').'_mysql';
         $mysql = new Mysql($mysql_name);
         $mysql->kill();
-
-        $elastic_name = env('container').'_elastic';
-        $elastic = new Elasticsearch($elastic_name);
-        $elastic->kill();
 
         $web_name = basename(self::getProjectDir());
         $web_name .= '_web';

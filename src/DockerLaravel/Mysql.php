@@ -1,6 +1,6 @@
 <?php
 
-namespace EkAndreas\DockerBedrock;
+namespace EkAndreas\DockerLaravel;
 
 class Mysql extends Container implements ContainerInterface
 {

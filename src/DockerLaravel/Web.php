@@ -1,6 +1,6 @@
 <?php
 
-namespace EkAndreas\DockerBedrock;
+namespace EkAndreas\DockerLaravel;
 
 class Web extends Container implements ContainerInterface
 {

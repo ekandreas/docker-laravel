@@ -1,7 +1,7 @@
 {
-    "name": "ekandreas/docker-bedrock",
-    "version": "0.8.12",
-    "description": "Docker environment for Roots Bedrock projects",
+    "name": "ekandreas/docker-laravel",
+    "version": "0.8",
+    "description": "Docker environment for Laravel projects",
     "license": "MIT",
     "authors": [
         {
@@ -10,16 +10,11 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "~2"
+        "vlucas/phpdotenv": "~2.2"
     },
     "autoload": {
         "psr-4": {
             "EkAndreas\\": "src/"
         }
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "EkAndreas\\DockerBedrock\\Installer::postAutoloadDump"
-        ]
     }
 }
