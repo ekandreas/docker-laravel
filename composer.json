@@ -1,6 +1,6 @@
 {
     "name": "ekandreas/docker-laravel",
-    "version": "0.9.8",
+    "version": "0.9.9",
     "description": "Docker environment for Laravel projects",
     "license": "MIT",
     "authors": [

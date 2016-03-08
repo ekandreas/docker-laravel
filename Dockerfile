@@ -4,11 +4,7 @@ MAINTAINER Andreas Ek <andreas@aekab.se>
 
 RUN a2enmod rewrite
 
-RUN pecl install xdebug
-
 RUN docker-php-ext-install mysql mysqli pdo pdo_mysql
-
-RUN docker-php-ext-enable xdebug
 
 ADD config/docker.conf /etc/apache2/sites-enabled/
 
