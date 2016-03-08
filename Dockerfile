@@ -4,7 +4,7 @@ MAINTAINER Andreas Ek <andreas@aekab.se>
 
 RUN a2enmod rewrite
 
-RUN pecl install xdebug-beta
+RUN pecl install xdebug
 
 RUN docker-php-ext-install mysql mysqli pdo pdo_mysql
 
