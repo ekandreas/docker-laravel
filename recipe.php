@@ -1,10 +1,10 @@
 <?php
 
-if (!class_exists('EkAndreas\DockerBedrock\Helpers')) {
-    include_once 'src/DockerBedrock/Helpers.php';
+if (!class_exists('EkAndreas\DockerLaravel\Helpers')) {
+    include_once 'src/DockerLaravel/Helpers.php';
 }
 
-use EkAndreas\DockerBedrock\Helpers;
+use EkAndreas\DockerLaravel\Helpers;
 
 $dir = Helpers::getProjectDir();
 require_once $dir.'/vendor/autoload.php';
