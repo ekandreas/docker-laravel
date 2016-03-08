@@ -35,7 +35,7 @@ Create a deploy file in the project root, a file called "deploy.php", eg:
 <!-- deploy.php in the laravel project root -->
 <!-- Change "theproject.dev" to your local dev domain -->
 <?php
-include_once 'vendor/ekandreas/docker-bedrock/recipe.php';
+include_once 'vendor/ekandreas/docker-laravel/recipe.php';
 
 server('theproject.dev', 'default')
     ->env('container', 'laravel')

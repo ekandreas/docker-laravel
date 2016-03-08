@@ -15,7 +15,7 @@ class Container
     {
         $this->dir = Helpers::getPackageDir();
         $this->webdir = Helpers::getProjectDir();
-        $this->image = has('docker.image') ? get('docker.image') : 'bedrock';
+        $this->image = has('docker.image') ? get('docker.image') : 'laravel';
         $this->container = $container_name;
         $this->ip = Helpers::getMachineIp();
     }
