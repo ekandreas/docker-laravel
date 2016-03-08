@@ -26,7 +26,7 @@ cd theproject
 ### Step 2, requirements
 Install this package with composer and require-dev
 ```bash
-composer require ekandreas/docker-laravel:dev-master --dev
+composer require ekandreas/docker-laravel:* --dev
 ```
 
 ### Step 3, the deployfile (deploy.php)
@@ -43,7 +43,18 @@ server('theproject.dev', 'default')
 ```
 
 ### Step 4, ensure .env
-**Note!** It's really important that you have a valid .env -file in the project root because Docker-Laravel will take DB_DATABASE and settings as parameters when creating the mysql container.
+**Note!** It's really important that you have a valid .env -file in the project root because Docker-Laravel will take DB_DATABASE and settings as parameters when creating the mysql container. 
+Set the DB_HOST to same as your Docker machine IP!
+
+Partitial example of a .env -file:
+```
+...
+DB_HOST=192.168.99.100
+DB_DATABASE=lund
+DB_USERNAME=root
+DB_PASSWORD=root
+...
+```
 
 ### Step 5, start containers
 Run the script command in the terminal at your project root:
